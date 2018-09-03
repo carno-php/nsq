@@ -23,7 +23,7 @@ class Subscribe
      */
     public function __construct(Promised $connected, Nsqd $nsqd, Consuming $consuming)
     {
-        go(function () use ($connected, $nsqd, $consuming) {
+        go(static function () use ($connected, $nsqd, $consuming) {
             if (yield $connected) {
                 if (yield $nsqd->sub($consuming->topic(), $consuming->channel())) {
                     $nsqd->rdy($consuming->concurrency());

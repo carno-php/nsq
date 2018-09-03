@@ -2,6 +2,7 @@
   "name": "carno-php/nsq",
   "license": "MIT",
   "require": {
+    "ext-bcmath": "*",
     "carno-php/coroutine": "^1.0",
     "carno-php/promise": "^1.0",
     "carno-php/channel": "^1.0",

@@ -28,7 +28,7 @@ class Handshake
     public function __construct(Stream $conn, Nsqd $nsqd, Promised $connected)
     {
         $options = [
-            'client_id' => sprintf('%d', posix_getpid()),
+            'client_id' => sprintf('%d', getmypid()),
             'hostname' => gethostname(),
             'user_agent' => 'carno-nsq/1.0'
         ];

@@ -8,6 +8,7 @@
 
 namespace Carno\NSQ;
 
+use Carno\Cluster\Classify\Scenes;
 use Carno\Cluster\Managed;
 use Carno\Cluster\Resources;
 use Carno\Net\Endpoint;
@@ -58,7 +59,7 @@ abstract class Cluster extends Managed
      */
     public function __construct(Resources $resources)
     {
-        $resources->initialize($this->type, $this->server, $this);
+        $resources->initialize(Scenes::RESOURCE, $this->type, $this->server, $this);
     }
 
     /**

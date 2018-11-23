@@ -51,7 +51,7 @@ class Features
         $host = $endpoint->address()->host();
         $port = $endpoint->address()->port();
 
-        if ($port === 0) {
+        if ($port <= 0) {
             $dsn = new DSN($host);
             $host = $dsn->host();
             $port = $dsn->port();
